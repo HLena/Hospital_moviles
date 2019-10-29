@@ -1,16 +1,14 @@
 package com.example.hospital;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -42,7 +40,7 @@ public class HospitalsActivity extends AppCompatActivity {
         button_float.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showFormsDialogs();
+                showFormsDialogsHospital();
             }
         });
 
@@ -59,7 +57,7 @@ public class HospitalsActivity extends AppCompatActivity {
 
     }
 
-    private void showFormsDialogs(){
+    private void showFormsDialogsHospital(){
         FragmentManager fm = getSupportFragmentManager();
         CreateHospitalFrag form = CreateHospitalFrag.newInstance("some tilte");
         form.show(fm, "fragment_create_hospital");
