@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FormFragment">
+    tools:context=".CreateHospitalFrag">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:text="@string/crear_hospital" />
 
         <EditText
-            android:id="@+id/name_hospt"
+            android:id="@+id/name_patient"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -56,5 +56,6 @@
 
     </LinearLayout>
 
-</FrameLayout>
 
+
+</FrameLayout>

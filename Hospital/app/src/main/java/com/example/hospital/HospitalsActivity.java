@@ -61,8 +61,8 @@ public class HospitalsActivity extends AppCompatActivity {
 
     private void showFormsDialogs(){
         FragmentManager fm = getSupportFragmentManager();
-        FormFragment form = FormFragment.newInstance("some tilte");
-        form.show(fm, "fragment_form");
+        CreateHospitalFrag form = CreateHospitalFrag.newInstance("some tilte");
+        form.show(fm, "fragment_create_hospital");
     }
 
 

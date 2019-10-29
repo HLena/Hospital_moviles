@@ -6,5 +6,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="crear_hospital">Crear Hospotal</string>
+    <string name="crear_hospital">Crear Hospital</string>
+    <string name="crear_doctor">Crear Doctor</string>
+    <string name="crear_paciente">Crear Paciente</string>
 </resources>

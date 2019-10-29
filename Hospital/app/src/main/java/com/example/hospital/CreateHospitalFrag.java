@@ -1,15 +1,6 @@
 package com.example.hospital;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.fragment.app.DialogFragment;
-//import android.support.v4.app.DialogFragment;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,32 +9,38 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.fragment.app.DialogFragment;
 
-public class FormFragment extends DialogFragment {
 
+public class CreateHospitalFrag extends DialogFragment {
     private EditText mEditText;
     private  Button createB, cancelB;
 
-    public FormFragment(){}
+    public CreateHospitalFrag() {
+        // Required empty public constructor
+    }
 
-    public static FormFragment newInstance(String title) {
-        FormFragment frag = new FormFragment();
+    public static CreateHospitalFrag newInstance(String title) {
+        CreateHospitalFrag frag = new CreateHospitalFrag();
         Bundle args = new Bundle();
         args.putString("title", title);
         frag.setArguments(args);
         return frag;
     }
 
+
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_form, container);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_create_hospital, container, false);
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         // Get field from view
-        mEditText = (EditText) view.findViewById(R.id.name_hospt);
+        mEditText = (EditText) view.findViewById(R.id.name_patient);
         createB = (Button) view.findViewById(R.id.button_create);
         cancelB = (Button) view.findViewById(R.id.button_cancel);
         // Fetch arguments from bundle and set title
@@ -69,7 +66,4 @@ public class FormFragment extends DialogFragment {
             }
         });
     }
-
-
-
 }
