@@ -42,7 +42,7 @@ public class CreateHospitalFrag extends DialogFragment {
         // Get field from view
         mEditText = (EditText) view.findViewById(R.id.name_patient);
         createB = (Button) view.findViewById(R.id.button_create);
-        cancelB = (Button) view.findViewById(R.id.button_cancel);
+        cancelB = (Button) view.findViewById(R.id.button_cancel_cita);
         // Fetch arguments from bundle and set title
         String title = getArguments().getString("title", "Enter Name");
         getDialog().setTitle(title);

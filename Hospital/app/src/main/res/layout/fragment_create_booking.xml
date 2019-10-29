@@ -18,7 +18,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:text="@string/crear_doctor"
+            android:layout_marginBottom="30dp"
+            android:text="@string/crear_Cita"
             android:textSize="20dp" />
 
         <LinearLayout
@@ -30,19 +31,20 @@
                 android:id="@+id/date_cita"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="70dp"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
-                android:text="Nombre: " />
+                android:text="Fecha:" />
 
             <EditText
-                android:id="@+id/name_doctor"
-                android:layout_width="230dp"
+                android:id="@+id/input_date"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:imeOptions="actionDone"
-                android:inputType="textPersonName" />
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="date" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -56,16 +58,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_weight="1"
-                android:text="Dirección" />
+                android:text="N° Habitación:" />
 
             <EditText
-                android:id="@+id/adress_doctor"
-                android:layout_width="230dp"
+                android:id="@+id/input_room"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="number" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -77,18 +80,18 @@
                 android:id="@+id/num_bed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="50dp"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="N° Cama:" />
 
             <EditText
-                android:id="@+id/telf_doctor"
-                android:layout_width="230dp"
+                android:id="@+id/input_bed"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="phone" />
+                android:inputType="number" />
 
         </LinearLayout>
 
@@ -99,7 +102,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button_create"
+                android:id="@+id/button_create_cita"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

@@ -51,9 +51,8 @@ public class Appointment extends Fragment {
 
     private void showFormsDialogsAppointment(){
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-        CreateDoctorFrag form = CreateDoctorFrag.newInstance("some title");
-        form.show(ft, "fragment_create_doctor");
+        CreateBookingFrag form = CreateBookingFrag.newInstance("some title");
+        form.show(ft, "fragment_create_booking");
 
 
     }

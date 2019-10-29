@@ -52,7 +52,7 @@ public class patients extends Fragment {
 
     private void showFormsDialogsPatient(){
         FragmentTransaction fm = getFragmentManager().beginTransaction();
-        CreateHospitalFrag form = CreateHospitalFrag.newInstance("some tilte");
+        CreatePatientFrag form = CreatePatientFrag.newInstance("some tilte");
         form.show(fm, "fragment_create_patient");
     }
 

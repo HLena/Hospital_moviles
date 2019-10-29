@@ -51,8 +51,9 @@ public class Doctors extends Fragment {
     }
 
     private void showFormsDialogsDoctor(){
+
         FragmentTransaction fm = getFragmentManager().beginTransaction();
-        CreateHospitalFrag form = CreateHospitalFrag.newInstance("some tilte");
+        CreateDoctorFrag form = CreateDoctorFrag.newInstance("some tilte");
         form.show(fm, "fragment_create_doctor");
     }
 
