@@ -98,7 +98,13 @@ public class CreatePatientFrag extends DialogFragment {
 
         SQLiteDatabase db = conn.getWritableDatabase();
 
-        String insert="INSERT INTO "+ Utilidades.TABLA_PACIENTE+" ( "+Utilidades.CAMPO_NOMBRE_PACIENTE+" , "+Utilidades.CAMPO_ID_HOSPITAL_PACIENTE+", "+Utilidades.CAMPO_TIPO_PACIENTE+") VALUES ('"+input1.getText().toString()+"','"+hospital_id+"','"+spinner.getTag().toString()+"')" ;
+        Integer continuo=0;
+        if(spinner.getSelectedItem().toString()=="Continuo")
+            continuo=1;
+        else
+            continuo=0;
+
+        String insert="INSERT INTO "+ Utilidades.TABLA_PACIENTE+" ( "+Utilidades.CAMPO_NOMBRE_PACIENTE+" , "+Utilidades.CAMPO_ID_HOSPITAL_PACIENTE+") VALUES ('"+input1.getText().toString()+"','"+hospital_id+"')" ;
         db.execSQL(insert);
         db.close();
 

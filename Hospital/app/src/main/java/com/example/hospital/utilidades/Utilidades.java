@@ -41,7 +41,7 @@ public class Utilidades {
     public static final String CREAR_TABLA_PACIENTE ="CREATE   TABLE "+TABLA_PACIENTE+ " ("+
             CAMPO_ID_PACIENTE+" INTEGER PRIMARY KEY  AUTOINCREMENT,"+
             CAMPO_NOMBRE_PACIENTE+" TEXT,"+
-            CAMPO_ID_HOSPITAL_PACIENTE+" INTEGER"+
+            CAMPO_ID_HOSPITAL_PACIENTE+" INTEGER,"+
             CAMPO_TIPO_PACIENTE+" INTEGER )";
 
     /*
@@ -59,11 +59,8 @@ public class Utilidades {
 
     public static final String CREAR_TABLA_CITA ="CREATE   TABLE "+TABLA_CITA+ " ("+
             CAMPO_ID_CITA+" INTEGER PRIMARY KEY  AUTOINCREMENT,"+
-            CAMPO_ID_HOSPITAL_CITA+" INTEGER"+
-            CAMPO_FECHA_CITA+" DATE,"+
-            CAMPO_NUM_HABITACION_CITA+" INTEGER "+
+            CAMPO_ID_HOSPITAL_CITA+" INTEGER,"+
+            CAMPO_FECHA_CITA+" TEXT,"+
+            CAMPO_NUM_HABITACION_CITA+" INTEGER,"+
             CAMPO_TIPO_PACIENTE +" INTEGER)";
-
-
-
 }

@@ -5,6 +5,7 @@ public class Cita {
 
     private Integer id;
     private Integer idHospital;
+    private Integer idPaciente;
     private String fecha;
     private Integer numHabitacion;
     private Integer numCama;
@@ -13,6 +14,7 @@ public class Cita {
     {
         this.id = id;
         this.idHospital=idHospital;
+        this.idPaciente=idPaciente;
         this.fecha = fecha;
         this.numHabitacion = numHabitacion;
         this.numCama = numCama;

@@ -64,7 +64,7 @@ public class CreateHospitalFrag extends DialogFragment {
         createB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registrarHospital();
+                registrarHospital();dismiss();
             }
         });
 
