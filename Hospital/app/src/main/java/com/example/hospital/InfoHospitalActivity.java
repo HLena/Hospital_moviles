@@ -2,11 +2,13 @@ package com.example.hospital;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.hospital.entidades.Hospital;
 import com.google.android.material.tabs.TabLayout;
 
 public class InfoHospitalActivity extends AppCompatActivity {
@@ -19,6 +21,9 @@ public class InfoHospitalActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_hospital);
 
@@ -37,8 +42,20 @@ public class InfoHospitalActivity extends AppCompatActivity {
         tabLayout.getTabAt(2).setIcon(R.drawable.paciente_icon);
         Fragment tabFragment = new TabFragment();
 
+        Bundle res=this.getIntent().getExtras();
+        if(res!=null)
+        {
+
+            String str=res.getString("item_name");
+            Toast.makeText(this,str, Toast.LENGTH_SHORT).show();
+        }
+
+
+
+
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
+
 
 
             @Override

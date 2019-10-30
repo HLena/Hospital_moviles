@@ -1,5 +1,7 @@
 package com.example.hospital;
 
+
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,14 +9,21 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.hospital.entidades.Hospital;
+
 public class MainActivity extends AppCompatActivity {
 
     ImageButton b1,b2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         b1 = (ImageButton)findViewById(R.id.imgB1);
         b2 = (ImageButton)findViewById(R.id.imgB2);
@@ -26,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent,0);
             }
         });
+
+        ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this,"db_hospital",null,1);
+
+
+
 
 
     }
