@@ -62,5 +62,6 @@ public class Utilidades {
             CAMPO_ID_HOSPITAL_CITA+" INTEGER,"+
             CAMPO_FECHA_CITA+" TEXT,"+
             CAMPO_NUM_HABITACION_CITA+" INTEGER,"+
+            CAMPO_NUM_CAMA_CITA+" INTEGER,"+
             CAMPO_TIPO_PACIENTE +" INTEGER)";
 }
