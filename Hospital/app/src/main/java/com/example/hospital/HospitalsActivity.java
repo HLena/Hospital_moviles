@@ -74,7 +74,7 @@ public class HospitalsActivity extends AppCompatActivity {
                 Intent intent = new Intent(HospitalsActivity.this, InfoHospitalActivity.class);
                 String itemClicked = listItemsValue.get(position);
 
-                intent.putExtra("item_name", itemClicked);
+                intent.putExtra("hospital_name", itemClicked);
                 startActivity(intent);
 
 

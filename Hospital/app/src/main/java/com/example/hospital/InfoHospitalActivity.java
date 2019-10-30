@@ -46,8 +46,8 @@ public class InfoHospitalActivity extends AppCompatActivity {
         if(res!=null)
         {
 
-            String str=res.getString("item_name");
-            Toast.makeText(this,str, Toast.LENGTH_SHORT).show();
+            String str=res.getString("hospital_name");
+            Toast.makeText(this,"Hospital : "+str, Toast.LENGTH_SHORT).show();
         }
 
 
