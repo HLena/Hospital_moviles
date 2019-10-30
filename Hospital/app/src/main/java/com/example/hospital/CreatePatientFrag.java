@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.fragment.app.DialogFragment;
@@ -14,6 +16,7 @@ import androidx.fragment.app.DialogFragment;
 public class CreatePatientFrag extends DialogFragment {
     private EditText input1, input2, input3;
     private Button createB, cancelB;
+    private Spinner spinner;
     //private OnFragmentInteractionListener mListener;
 
     public CreatePatientFrag() {
@@ -44,6 +47,9 @@ public class CreatePatientFrag extends DialogFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view,savedInstanceState);
         //return inflater.inflate(R.layout.fragment_create_patient, container, false);
+        String[] type_patient = {"Continuo","No Continuo"};
+        spinner = (Spinner) view.findViewById(R.id.spinner);
+        spinner.setAdapter(new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, type_patient));
         input1 = (EditText) view.findViewById(R.id.name_doctor1);
         input2 = (EditText) view.findViewById(R.id.adress_doctor1);
         input3 = (EditText) view.findViewById(R.id.telf_doctor1);

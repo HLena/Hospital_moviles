@@ -19,7 +19,7 @@
             android:text="@string/crear_hospital" />
 
         <EditText
-            android:id="@+id/name_patient"
+            android:id="@+id/name_hospital"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

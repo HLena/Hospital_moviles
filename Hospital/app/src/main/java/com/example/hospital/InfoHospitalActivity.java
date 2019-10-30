@@ -1,5 +1,6 @@
 package com.example.hospital;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +22,9 @@ public class InfoHospitalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_hospital);
 
-        //adapter = new TabAdapter(getSupportFragmentManager());
+        Intent intent = getIntent();
+        //pasar este dato a la actividad
+        String message = intent.getStringExtra("item_name");
 
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(new TabAdapter(getSupportFragmentManager()));

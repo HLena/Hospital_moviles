@@ -26,6 +26,19 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/textName1"
                 android:layout_width="wrap_content"
@@ -79,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Telf:" />
 
             <EditText
                 android:id="@+id/telf_doctor1"

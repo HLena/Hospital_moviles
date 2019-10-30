@@ -1,9 +1,11 @@
 package com.example.hospital;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -44,6 +46,18 @@ public class Appointment extends Fragment {
             @Override
             public void onClick(View v) {
                 showFormsDialogsAppointment();
+            }
+        });
+
+        listItemView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //Toast.makeText(HospitalsActivity.this, listItemsValue[position], Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), info_Item.class);
+                String itemClicked = listItemsValue[position];
+                intent.putExtra("item_name", itemClicked);
+                startActivity(intent);
+
             }
         });
         return rootView;

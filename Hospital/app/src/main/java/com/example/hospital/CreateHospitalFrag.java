@@ -40,7 +40,7 @@ public class CreateHospitalFrag extends DialogFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         // Get field from view
-        mEditText = (EditText) view.findViewById(R.id.name_patient);
+        mEditText = (EditText) view.findViewById(R.id.name_hospital);
         createB = (Button) view.findViewById(R.id.button_create);
         cancelB = (Button) view.findViewById(R.id.button_cancel_cita);
         // Fetch arguments from bundle and set title

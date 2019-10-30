@@ -10,13 +10,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
-        <ListView
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/listViewPatients"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true">
-        </ListView>
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/listViewPatients"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></ListView>
+        </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_patient"

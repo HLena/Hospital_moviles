@@ -1,9 +1,11 @@
 package com.example.hospital;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -39,6 +41,17 @@ public class patients extends Fragment {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_2, android.R.id.text1, listItemsValue);
         listItemView.setAdapter(adapter);
+        listItemView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //Toast.makeText(HospitalsActivity.this, listItemsValue[position], Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), info_Item.class);
+                String itemClicked = listItemsValue[position];
+                intent.putExtra("item_name", itemClicked);
+                startActivity(intent);
+
+            }
+        });
 
         button_float.setOnClickListener(new View.OnClickListener() {
             @Override
