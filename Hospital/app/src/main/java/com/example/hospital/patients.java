@@ -49,6 +49,8 @@ public class patients extends Fragment {
 
         Bundle res= getActivity().getIntent().getExtras();
         String hospital_id ="";
+        listItemsNames.clear();
+        listItemsIds.clear();
 
         if(res!=null)
         {

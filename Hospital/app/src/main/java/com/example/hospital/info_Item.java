@@ -16,7 +16,6 @@ public class info_Item extends AppCompatActivity {
             "Docotr Android",
             "Docotr Android",
 
-
     };
     Toolbar toolbar;
 

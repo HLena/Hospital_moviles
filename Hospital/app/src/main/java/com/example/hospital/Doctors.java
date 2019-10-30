@@ -53,6 +53,9 @@ public class Doctors extends Fragment {
         String hospital_name ="";
         String hospital_id ="";
 
+        listItemsNames.clear();
+        listItemsIds.clear();
+
         if(res!=null)
         {
             hospital_name=res.getString("hospital_name");
@@ -74,9 +77,9 @@ public class Doctors extends Fragment {
         {
             while (!cursor.isAfterLast()) {
                 String name = cursor.getString(cursor.getColumnIndex("nombre"));
-                String idHospital = cursor.getString(cursor.getColumnIndex("id"));
+                String idDoctor = cursor.getString(cursor.getColumnIndex("id"));
 
-                listItemsIds.add(idHospital);
+                listItemsIds.add(idDoctor);
                 listItemsNames.add(name);
                 cursor.moveToNext();
             }
@@ -95,7 +98,8 @@ public class Doctors extends Fragment {
                 //Toast.makeText(HospitalsActivity.this, listItemsValue[position], Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), info_Item.class);
                 String itemClicked = listItemsNames.get(position);
-                intent.putExtra("item_name", itemClicked);
+                String itemClickedId = listItemsIds.get(position);
+                intent.putExtra("doctor_id", itemClickedId);
                 startActivity(intent);
 
             }
