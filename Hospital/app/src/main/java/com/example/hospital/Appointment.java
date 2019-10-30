@@ -29,11 +29,7 @@ public class Appointment extends Fragment {
     ArrayList<String> listItemsIds = new ArrayList<String>();
     ArrayList<String> listItemsNames = new ArrayList<String>();
 
-    String[] listItemsValue = new String[] {
-            "cita 1",
-            "cita 2",
-            "cita 3",
-    };
+
     public Appointment() {
         // Required empty public constructor
     }

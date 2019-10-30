@@ -85,7 +85,19 @@ public class CreateBookingFrag extends DialogFragment {
 
         SQLiteDatabase db = conn.getWritableDatabase();
 
-        String insert="INSERT INTO "+Utilidades.TABLA_CITA+" ( "+Utilidades.CAMPO_FECHA_CITA+","+Utilidades.CAMPO_NUM_HABITACION_CITA+","+Utilidades.CAMPO_NUM_CAMA_CITA+") VALUES ('"+input1.getText().toString()+"' , '"+input3.getText().toString()+"','"+input2.getText().toString()+"')" ;
+        Bundle res= getActivity().getIntent().getExtras();
+        String hospital_name ="";
+        String hospital_id ="";
+
+        if(res!=null)
+        {
+            hospital_name=res.getString("hospital_name");
+            hospital_id=res.getString("hospital_id");
+        }
+
+
+        String insert="INSERT INTO "+Utilidades.TABLA_CITA+" ( "+Utilidades.CAMPO_ID_HOSPITAL_CITA+","+Utilidades.CAMPO_FECHA_CITA+","+Utilidades.CAMPO_NUM_HABITACION_CITA+","+Utilidades.CAMPO_NUM_CAMA_CITA+") " +
+                "VALUES ('"+hospital_id+"' ,'"+input1.getText().toString()+"' , '"+input3.getText().toString()+"','"+input2.getText().toString()+"')" ;
         db.execSQL(insert);
         db.close();
     }
