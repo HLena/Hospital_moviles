@@ -29,6 +29,7 @@ public class HospitalsActivity extends AppCompatActivity {
 
     ConexionSQLiteHelper conn;
     ArrayList<String> listItemsValue = new ArrayList<String>();
+    ArrayList<String> listItemsIds = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +38,16 @@ public class HospitalsActivity extends AppCompatActivity {
         conn = new  ConexionSQLiteHelper(getApplicationContext(),"db_hospital",null,1);
         SQLiteDatabase db=conn.getReadableDatabase();
 
-        String[] campos = {Utilidades.CAMPO_NOMBRE};
+        String[] campos = {Utilidades.CAMPO_ID,Utilidades.CAMPO_NOMBRE};
         Cursor cursor = db.query(Utilidades.TABLA_HOSPITAL,campos,null,null,null,null,null);
 
         if (cursor.moveToFirst())
         {
             while (!cursor.isAfterLast()) {
-                String name = cursor.getString(cursor.getColumnIndex("nombre"));
+                    String name = cursor.getString(cursor.getColumnIndex("nombre"));
+                    String idHospital = cursor.getString(cursor.getColumnIndex("id"));
 
+                    listItemsIds.add(idHospital);
                     listItemsValue.add(name);
                 cursor.moveToNext();
             }
@@ -72,9 +75,12 @@ public class HospitalsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Toast.makeText(HospitalsActivity.this, listItemsValue[position], Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(HospitalsActivity.this, InfoHospitalActivity.class);
+
                 String itemClicked = listItemsValue.get(position);
+                String itemClickedId = listItemsIds.get(position);
 
                 intent.putExtra("hospital_name", itemClicked);
+                intent.putExtra("hospital_id", itemClickedId);
                 startActivity(intent);
 
 

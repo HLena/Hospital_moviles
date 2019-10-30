@@ -27,9 +27,6 @@ public class InfoHospitalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_hospital);
 
-        Intent intent = getIntent();
-        //pasar este dato a la actividad
-        String message = intent.getStringExtra("item_name");
 
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(new TabAdapter(getSupportFragmentManager()));
@@ -46,12 +43,10 @@ public class InfoHospitalActivity extends AppCompatActivity {
         if(res!=null)
         {
 
-            String str=res.getString("hospital_name");
-            Toast.makeText(this,"Hospital : "+str, Toast.LENGTH_SHORT).show();
+            String hospital_name=res.getString("hospital_name");
+            String hospital_id=res.getString("hospital_id");
+            Toast.makeText(this,"Hospital : "+hospital_name , Toast.LENGTH_SHORT).show();
         }
-
-
-
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){

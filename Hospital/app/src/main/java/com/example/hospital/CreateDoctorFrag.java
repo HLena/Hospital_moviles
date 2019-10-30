@@ -1,5 +1,6 @@
 package com.example.hospital;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.fragment.app.DialogFragment;
+
+import com.example.hospital.utilidades.Utilidades;
 
 
 public class CreateDoctorFrag extends DialogFragment {
@@ -60,7 +63,9 @@ public class CreateDoctorFrag extends DialogFragment {
         createB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                registrarDoctorSQL();
                 Toast.makeText(getActivity(), "creado", Toast.LENGTH_SHORT).show();
+
                 dismiss();
             }
         });
@@ -71,4 +76,30 @@ public class CreateDoctorFrag extends DialogFragment {
             }
         });
     }
+
+
+    public  void registrarDoctorSQL()
+    {
+
+        Bundle res= getActivity().getIntent().getExtras();
+        String hospital_name ="";
+        String hospital_id ="";
+
+        if(res!=null)
+        {
+            hospital_name=res.getString("hospital_name");
+            hospital_id=res.getString("hospital_id");
+        }
+
+
+        ConexionSQLiteHelper conn = new  ConexionSQLiteHelper(getActivity(),"db_hospital",null,1);
+
+        SQLiteDatabase db = conn.getWritableDatabase();
+
+        String insert="INSERT INTO "+ Utilidades.TABLA_MEDICO+" ( "+Utilidades.CAMPO_ID_HOSPITAL_MEDICO+" , "+Utilidades.CAMPO_NOMBRE+") VALUES ('"+hospital_id+"','"+input1.getText().toString()+"')" ;
+        db.execSQL(insert);
+        db.close();
+
+    }
+
 }
