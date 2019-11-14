@@ -11,18 +11,42 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar2"
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:background="#048BB1"
+            android:logo="?attr/homeAsUpIndicator"
             android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme" />
+            android:theme="?attr/actionBarTheme"
+            app:logo="?attr/homeAsUpIndicator"
+            app:subtitleTextColor="#00FFFFFF"
+            app:titleTextColor="#00FFFFFF">
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Hospitales"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </androidx.appcompat.widget.Toolbar>
 
         <ListView
             android:id="@+id/listView1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp">
 
         </ListView>
     </LinearLayout>
@@ -39,11 +63,12 @@
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="15dp"
-        android:background="@color/colorPrimary"
+        android:background="#2196F3"
         android:clickable="true"
         android:src="@android:drawable/ic_input_add"
-        app:backgroundTint="#2196F3"
-        app:elevation="4dp" />
+        app:backgroundTint="#048BB1"
+        app:elevation="4dp"
+        app:rippleColor="#048BB1" />
 
 
 </RelativeLayout>

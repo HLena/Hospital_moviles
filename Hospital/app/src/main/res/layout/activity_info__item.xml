@@ -16,20 +16,61 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar4"
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?attr/colorPrimary"
+                android:background="#048BB1"
                 android:logo="?attr/homeAsUpIndicator"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
-                app:logo="?attr/homeAsUpIndicator" />
+                app:logo="?attr/homeAsUpIndicator"
+                app:subtitleTextColor="#00FFFFFF"
+                app:titleTextColor="#00FFFFFF">
 
-            <ListView
-                android:id="@+id/listViewitems"
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+            <TextView
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></ListView>
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Citas :"
+                android:textColor="#124269"
+                android:textSize="24sp" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ListView
+                    android:id="@+id/listViewitems"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp">
+
+                </ListView>
+            </FrameLayout>
+
+
         </LinearLayout>
 
     </RelativeLayout>

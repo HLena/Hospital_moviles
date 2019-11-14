@@ -64,7 +64,6 @@ public class CreateDoctorFrag extends DialogFragment {
             @Override
             public void onClick(View v) {
                 registrarDoctorSQL();
-                Toast.makeText(getActivity(), "creado", Toast.LENGTH_SHORT).show();
 
                 dismiss();
             }
@@ -99,6 +98,8 @@ public class CreateDoctorFrag extends DialogFragment {
         String insert="INSERT INTO "+ Utilidades.TABLA_MEDICO+" ( "+Utilidades.CAMPO_ID_HOSPITAL_MEDICO+" , "+Utilidades.CAMPO_NOMBRE+") VALUES ('"+hospital_id+"','"+input1.getText().toString()+"')" ;
         db.execSQL(insert);
         db.close();
+        getActivity().finish();
+        startActivity(getActivity().getIntent())    ;
 
     }
 

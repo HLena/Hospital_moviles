@@ -3,13 +3,16 @@ package com.example.hospital;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
@@ -31,8 +34,11 @@ public class HospitalsActivity extends AppCompatActivity {
     ArrayList<String> listItemsValue = new ArrayList<String>();
     ArrayList<String> listItemsIds = new ArrayList<String>();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
 
 
         conn = new  ConexionSQLiteHelper(getApplicationContext(),"db_hospital",null,1);
@@ -58,17 +64,19 @@ public class HospitalsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_hospitals);
 
         listItemView = (ListView) findViewById(R.id.listView1);
+
         button_float = (FloatingActionButton) findViewById(R.id.button_float1);
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_2, android.R.id.text1, listItemsValue);
-        listItemView.setAdapter(adapter);
-
         button_float.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showFormsDialogsHospital();
             }
         });
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_2, android.R.id.text1, listItemsValue);
+        listItemView.setAdapter(adapter);
+
+
 
         listItemView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

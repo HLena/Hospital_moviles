@@ -34,6 +34,8 @@ public class Doctors extends Fragment {
 
     };
 
+    String hospital_name ="";
+    String hospital_id ="";
     ConexionSQLiteHelper conn;
 
     ArrayList<String> listItemsIds = new ArrayList<String>();
@@ -50,8 +52,7 @@ public class Doctors extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_doctors, container, false);
 
         Bundle res= getActivity().getIntent().getExtras();
-        String hospital_name ="";
-        String hospital_id ="";
+
 
         listItemsNames.clear();
         listItemsIds.clear();
@@ -97,9 +98,14 @@ public class Doctors extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Toast.makeText(HospitalsActivity.this, listItemsValue[position], Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), info_Item.class);
-                String itemClicked = listItemsNames.get(position);
-                String itemClickedId = listItemsIds.get(position);
-                intent.putExtra("doctor_id", itemClickedId);
+
+                String doctorName = listItemsNames.get(position);
+                String doctorId = listItemsIds.get(position);
+
+                intent.putExtra("doctor_name", doctorName);
+                intent.putExtra("doctor_id", doctorId);
+                intent.putExtra("hospital_id", hospital_id);
+
                 startActivity(intent);
 
             }

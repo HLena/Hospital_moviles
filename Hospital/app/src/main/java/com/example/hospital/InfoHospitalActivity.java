@@ -2,7 +2,9 @@ package com.example.hospital;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -37,6 +39,8 @@ public class InfoHospitalActivity extends AppCompatActivity {
         tabLayout.getTabAt(0).setIcon(R.drawable.especialidad_icon);
         tabLayout.getTabAt(1).setIcon(R.drawable.doctor_icon);
         tabLayout.getTabAt(2).setIcon(R.drawable.paciente_icon);
+
+
         Fragment tabFragment = new TabFragment();
 
         Bundle res=this.getIntent().getExtras();
@@ -45,8 +49,13 @@ public class InfoHospitalActivity extends AppCompatActivity {
 
             String hospital_name=res.getString("hospital_name");
             String hospital_id=res.getString("hospital_id");
-            Toast.makeText(this,"Hospital : "+hospital_name , Toast.LENGTH_SHORT).show();
+
+            TextView mytoolbarTitle =(TextView)findViewById(R.id.title);
+            mytoolbarTitle.setText("Hospital "+hospital_name);
+
+
         }
+
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){

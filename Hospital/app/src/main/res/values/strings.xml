@@ -27,6 +27,7 @@
     <string name="menu_send">Send</string>
     <string name="title_activity_about_items">AboutItems</string>
     <string name="title_activity_menu">menu</string>
+    <string name="title_activity_appoiment_patients">appoiment_patients</string>
 
 
 </resources>

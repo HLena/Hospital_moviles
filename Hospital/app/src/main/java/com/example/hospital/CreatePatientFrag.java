@@ -70,8 +70,9 @@ public class CreatePatientFrag extends DialogFragment {
             @Override
             public void onClick(View v) {
                 registrarPacienteSQL();
-                Toast.makeText(getActivity(), "creado", Toast.LENGTH_SHORT).show();
                 dismiss();
+                getActivity().finish();
+                startActivity(getActivity().getIntent())    ;
             }
         });
         cancelB.setOnClickListener(new View.OnClickListener() {

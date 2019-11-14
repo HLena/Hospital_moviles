@@ -5,6 +5,17 @@
     android:layout_height="match_parent"
     tools:context=".CreatePatientFrag">
 
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:id="@+id/root_layout"
+        android:fillViewport="true" >
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,36 +30,19 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:text="@string/crear_paciente"
-            android:textSize="20dp" />
+            android:textSize="24sp" />
+
+
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="320dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textName1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_weight="1"
-                android:text="Nombre: " />
 
             <EditText
+                android:hint="Nombres"
                 android:id="@+id/name_doctor1"
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
@@ -63,15 +57,10 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textAddress1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="1"
-                android:text="Dirección" />
+
 
             <EditText
+                android:hint="Dirección"
                 android:id="@+id/adress_doctor1"
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
@@ -86,20 +75,16 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textTelf1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="1"
-                android:text="Telf:" />
+
 
             <EditText
+                android:hint="Celular"
                 android:id="@+id/telf_doctor1"
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:maxLength="11"
                 android:ems="10"
                 android:inputType="phone" />
 
@@ -108,18 +93,23 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="130dp"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button_create1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="5dp"
-                android:background="@android:color/white"
-                android:text="Crear"
-                android:textColor="@android:color/holo_blue_dark" />
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="320dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:textSize="30dp" />/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/button_cancel1"
@@ -127,11 +117,24 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
-                android:background="@android:color/white"
+                android:background="#FC8383"
                 android:text="Cancelar"
-                android:textColor="@android:color/holo_blue_dark" />
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/button_create1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="#048BB1"
+                android:text="Crear"
+                android:textColor="#FFFFFF" />
+
+
         </LinearLayout>
 
     </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

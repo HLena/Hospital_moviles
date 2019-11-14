@@ -21,22 +21,6 @@
                 android:layout_height="match_parent"></ListView>
         </LinearLayout>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/add_appointment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="15dp"
-            android:clickable="true"
-            android:src="@android:drawable/ic_input_add"
-            app:backgroundTint="#2196F3"
-            app:elevation="4dp" />
 
     </RelativeLayout>
 

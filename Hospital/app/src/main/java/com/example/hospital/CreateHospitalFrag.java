@@ -64,7 +64,11 @@ public class CreateHospitalFrag extends DialogFragment {
         createB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registrarHospital();dismiss();
+
+                registrarHospital();
+                dismiss();
+                getActivity().finish();
+                startActivity(getActivity().getIntent())    ;
             }
         });
 
@@ -86,8 +90,6 @@ public class CreateHospitalFrag extends DialogFragment {
         db.execSQL(insert);
 
 
-
-        Toast.makeText(getActivity().getApplicationContext(),"id Registro completado " ,Toast.LENGTH_SHORT).show();
         db.close();
     }
 
@@ -100,7 +102,6 @@ public class CreateHospitalFrag extends DialogFragment {
         values.put(Utilidades.CAMPO_NOMBRE,mEditText.getText().toString());
 
         Long idResultante = db.insert(Utilidades.TABLA_HOSPITAL,Utilidades.CAMPO_ID,values);
-        Toast.makeText(getActivity().getApplicationContext(),"id Registro: "+ idResultante ,Toast.LENGTH_SHORT).show();
         db.close();
 
     }

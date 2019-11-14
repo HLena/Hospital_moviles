@@ -6,8 +6,8 @@
     tools:context=".CreateHospitalFrag">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
@@ -16,7 +16,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:text="@string/crear_hospital" />
+            android:text="@string/crear_hospital"
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/name_hospital"
@@ -24,24 +25,16 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
+            android:hint="Nombre del Hospital"
             android:imeOptions="actionDone"
             android:inputType="textPersonName" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="130dp"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button_create"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="5dp"
-                android:background="@android:color/white"
-                android:text="Crear"
-                android:textColor="@android:color/holo_blue_dark" />
 
             <Button
                 android:id="@+id/button_cancel_cita"
@@ -49,9 +42,21 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
-                android:background="@android:color/white"
+                android:background="#FF6767"
                 android:text="Cancelar"
-                android:textColor="@android:color/holo_blue_dark" />
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/button_create"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="#048BB1"
+                android:text="Crear"
+                android:textColor="#FFFFFF" />
+
+
         </LinearLayout>
 
     </LinearLayout>

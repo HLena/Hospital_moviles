@@ -24,6 +24,7 @@ public class patients extends Fragment {
 
     ListView listItemView;
     FloatingActionButton button_float;
+    public  String hospital_id ="";
 
     ConexionSQLiteHelper conn;
 
@@ -48,7 +49,7 @@ public class patients extends Fragment {
 
 
         Bundle res= getActivity().getIntent().getExtras();
-        String hospital_id ="";
+
         listItemsNames.clear();
         listItemsIds.clear();
 
@@ -56,6 +57,8 @@ public class patients extends Fragment {
         {
             hospital_id=res.getString("hospital_id");
         }
+
+
 
         conn = new  ConexionSQLiteHelper(getActivity().getApplicationContext(),"db_hospital",null,1);
         SQLiteDatabase db=conn.getReadableDatabase();
@@ -72,10 +75,12 @@ public class patients extends Fragment {
         {
             while (!cursor.isAfterLast()) {
                 String name = cursor.getString(cursor.getColumnIndex("nombre"));
-                String idHospital = cursor.getString(cursor.getColumnIndex("id"));
+                String idPaciente = cursor.getString(cursor.getColumnIndex("id"));
 
-                listItemsIds.add(idHospital);
+                listItemsIds.add(idPaciente);
                 listItemsNames.add(name);
+
+
                 cursor.moveToNext();
             }
         }
@@ -87,17 +92,6 @@ public class patients extends Fragment {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_2, android.R.id.text1, listItemsNames);
         listItemView.setAdapter(adapter);
-        listItemView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Toast.makeText(HospitalsActivity.this, listItemsValue[position], Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getActivity(), info_Item.class);
-                String itemClicked = listItemsNames.get(position);
-                intent.putExtra("item_name", itemClicked);
-                startActivity(intent);
-
-            }
-        });
 
         button_float.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +99,29 @@ public class patients extends Fragment {
                 showFormsDialogsPatient();
             }
         });
+
+
+
+        listItemView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //Toast.makeText(HospitalsActivity.this, listItemsValue[position], Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), list_appoiment_patient.class);
+                String itemClicked = listItemsNames.get(position);
+                String itemIdPatient = listItemsIds.get(position);
+
+
+                intent.putExtra("patient_name", itemClicked);
+                intent.putExtra("patient_id", itemIdPatient);
+                intent.putExtra("hospital_id",hospital_id);
+
+
+                startActivity(intent);
+
+            }
+        });
+
+
 
         return rootView;
     }

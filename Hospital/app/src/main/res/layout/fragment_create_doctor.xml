@@ -5,6 +5,17 @@
     android:layout_height="match_parent"
     tools:context=".CreateDoctorFrag">
 
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:id="@+id/root_layout"
+        android:fillViewport="true" >
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,23 +30,17 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:text="@string/crear_doctor"
-            android:textSize="20dp" />
+            android:textSize="24sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/date_cita"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_weight="1"
-                android:text="Nombre: " />
+
 
             <EditText
+                android:hint="Nombres"
                 android:id="@+id/name_doctor"
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
@@ -50,15 +55,9 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/num_room"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="1"
-                android:text="Dirección" />
 
             <EditText
+                android:hint="Dirección"
                 android:id="@+id/adress_doctor"
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
@@ -73,19 +72,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/num_bed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="1"
-                android:text="TextView" />
 
             <EditText
+                android:hint="Telf"
                 android:id="@+id/telf_doctor"
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:maxLength="9"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="phone" />
@@ -95,18 +89,9 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="130dp"
+            android:gravity="center"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button_create"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="5dp"
-                android:background="@android:color/white"
-                android:text="Crear"
-                android:textColor="@android:color/holo_blue_dark" />
 
             <Button
                 android:id="@+id/button_cancel_cita"
@@ -114,11 +99,26 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
-                android:background="@android:color/white"
+                android:background="#FF8888"
                 android:text="Cancelar"
-                android:textColor="@android:color/holo_blue_dark" />
+                android:textColor="#FFFFFF" />
+
+
+            <Button
+                android:id="@+id/button_create"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="#048BB1"
+                android:text="Crear"
+                android:textColor="#FFFFFF" />
+
+
         </LinearLayout>
 
     </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>

@@ -55,11 +55,15 @@ public class Utilidades {
     public static final String CAMPO_FECHA_CITA ="fecha";
     public static final String CAMPO_NUM_HABITACION_CITA ="numHabitacion";
     public static final String CAMPO_NUM_CAMA_CITA ="numCama";
+    public static final String CAMPO_ID_MEDICO_CITA ="idMedico";
+    public static final String CAMPO_ID_PACIENTE_CITA ="idPaciente";
 
 
     public static final String CREAR_TABLA_CITA ="CREATE   TABLE "+TABLA_CITA+ " ("+
             CAMPO_ID_CITA+" INTEGER PRIMARY KEY  AUTOINCREMENT,"+
             CAMPO_ID_HOSPITAL_CITA+" INTEGER,"+
+            CAMPO_ID_MEDICO_CITA+" INTEGER,"+
+            CAMPO_ID_PACIENTE_CITA+" INTEGER,"+
             CAMPO_FECHA_CITA+" TEXT,"+
             CAMPO_NUM_HABITACION_CITA+" INTEGER,"+
             CAMPO_NUM_CAMA_CITA+" INTEGER,"+
