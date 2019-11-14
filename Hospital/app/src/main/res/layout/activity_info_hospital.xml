@@ -16,9 +16,18 @@
         android:logo="?attr/homeAsUpIndicator"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:logo="?attr/homeAsUpIndicator"
         app:subtitleTextColor="#00FFFFFF"
         app:titleTextColor="#00FFFFFF">
+
+        <ImageButton
+            android:id="@+id/backButton2"
+            android:background="#048BB1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="?attr/homeAsUpIndicator"
+            >
+        </ImageButton>
+
 
         <TextView
             android:id="@+id/title"

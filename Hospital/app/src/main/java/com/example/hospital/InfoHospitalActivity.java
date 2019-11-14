@@ -2,6 +2,8 @@ package com.example.hospital;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -18,11 +20,13 @@ public class InfoHospitalActivity extends AppCompatActivity {
     private TabAdapter adapter;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private ImageButton back;
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
 
 
 
@@ -76,6 +80,16 @@ public class InfoHospitalActivity extends AppCompatActivity {
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 
+            }
+        });
+
+        back = (ImageButton)findViewById(R.id.backButton2);
+
+
+        back.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                InfoHospitalActivity.super.onBackPressed();
             }
         });
 

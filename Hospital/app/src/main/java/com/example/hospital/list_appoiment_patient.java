@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toolbar;
@@ -40,6 +41,7 @@ public class list_appoiment_patient extends AppCompatActivity {
 
     FloatingActionButton button_float;
 
+    ImageButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +110,16 @@ public class list_appoiment_patient extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_2, android.R.id.text1, listItemsValue);
         listAppoimentsPatient.setAdapter(adapter);
+
+        back = (ImageButton)findViewById(R.id.backButton);
+
+
+        back.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                list_appoiment_patient.super.onBackPressed();
+            }
+        });
     }
 
 

@@ -1,5 +1,6 @@
 package com.example.hospital;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toolbar;
@@ -35,11 +38,13 @@ public class HospitalsActivity extends AppCompatActivity {
     ArrayList<String> listItemsIds = new ArrayList<String>();
 
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
 
 
+        ImageButton back;
 
         conn = new  ConexionSQLiteHelper(getApplicationContext(),"db_hospital",null,1);
         SQLiteDatabase db=conn.getReadableDatabase();
@@ -92,6 +97,16 @@ public class HospitalsActivity extends AppCompatActivity {
                 startActivity(intent);
 
 
+            }
+        });
+
+        back = (ImageButton)findViewById(R.id.backButton);
+
+
+        back.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                HospitalsActivity.super.onBackPressed();
             }
         });
 

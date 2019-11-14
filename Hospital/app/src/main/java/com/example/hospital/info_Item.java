@@ -4,7 +4,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toolbar;
@@ -29,6 +31,7 @@ public class info_Item extends AppCompatActivity {
     String doctor_id;
     String doctor_name;
     String hospital_id;
+    ImageButton back;
 
     ConexionSQLiteHelper conn;
 
@@ -109,5 +112,14 @@ public class info_Item extends AppCompatActivity {
         listItemView.setAdapter(adapter);
 
 
+        back = (ImageButton)findViewById(R.id.backButton);
+
+
+        back.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                info_Item.super.onBackPressed();
+            }
+        });
     }
 }
